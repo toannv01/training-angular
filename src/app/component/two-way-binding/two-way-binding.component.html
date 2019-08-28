@@ -1,0 +1,24 @@
+<p>
+  {{title}}
+</p>
+
+<form action="" method="POST" role="form">
+  <legend>Form title</legend>
+
+  <div class="form-group">
+    <label>Ho ten: {{ name }} </label>
+    <input type="text" class="form-control" [(ngModel)]="this.name" name="name">
+  </div>
+  <hr>
+  Gioi tinh : {{sex == 0 ? 'nu' : 'nam'}}
+  <select class="form-control" [(ngModel)]="sex" name="sex"
+          [ngModelOptions]="{standalone: true}"
+  >
+    <option value="0">Nu</option>
+    <option value="1">Nam</option>
+  </select>
+
+
+  <hr>
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>

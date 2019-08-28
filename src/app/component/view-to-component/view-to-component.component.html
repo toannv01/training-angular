@@ -1,0 +1,24 @@
+<h1> {{title}} </h1>
+<button class="btn btn-primary" type="button" (click)="onClick($event)">
+  Click Me
+</button>
+<button class="btn btn-primary" type="button" (click)="onDbClick($event)">
+  Db Click Me
+</button>
+<hr>
+
+<h1>{{ count }}</h1>
+<button type="button" class="btn btn-warning" (click)="onInc()">Up</button>
+<button type="button" class="btn btn-warning" (click)="down()">down</button>
+
+<hr>
+<div class="form-group">
+  <label for="">User name: {{username}} </label>
+  <input type="text" class="form-control" id="" (keyup)="onKeyUp($event)" placeholder="input field">
+</div>
+<div class="form-group">
+  <label for="">User name enter to change:</label>
+  <input type="text" class="form-control" id="" (keyup.enter)="onKeyUpEnter($event)" placeholder="input field">
+</div>
+
+<h1>Ket qua: {{name}} </h1>

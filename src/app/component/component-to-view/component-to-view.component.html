@@ -1,0 +1,32 @@
+<h3> {{ title }} </h3>
+<h4>Họ và tên: {{ name }} </h4>
+<p>Tuổi: {{ user.age }} </p>
+<p>Tình trạng: {{isMarried ? 'Đã kết hôn' : 'Độc thân'}} </p>
+
+<h2>Tên: {{ showInfo() }} </h2>
+<img src="{{ imgLink }} " width="200" alt=""> <br>
+<a href=" {{ link }} ">Chatwork</a>
+
+<h1>Propepty blinding</h1>
+<img [src]="imgLink" [width]="imgWidth" [alt]="textIMG"> <br>
+<input type="text" class="form-control" name="" id="" value="{{ name }}">
+<button
+  type="button"
+  class="btn btn-primary"
+  [disabled] = "isValid"
+  >
+  Đăng nhập
+</button>
+<hr>
+<table class="row col-md-12">
+    <tr>
+      <td class="col-md-4">ID</td>
+      <td class="col-md-4">Họ tên</td>
+      <td class="col-md-4">SĐT</td>
+    </tr>
+    <tr>
+      <td class="col-md-4"> {{name}} </td>
+      <td class="col-md-4"> {{age}} </td>
+      <td class="col-md-4"> {{isMarried}} </td>
+    </tr>
+</table>
