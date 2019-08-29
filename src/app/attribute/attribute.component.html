@@ -1,0 +1,37 @@
+<h3 [class.pd-10]="true"
+    [class.cl-red]="true"
+    [class.border-blue]="true">
+  Chào mừng Angular
+</h3>
+<h3 [ngClass]="['pd-10','cl-red','border-blue']"
+    [ngClass]="{ 'pd-10' : isSpecial === true }"
+>
+  Chào mừng Angular
+</h3>
+
+<hr>
+<P>Special : {{ isSpecial }}  </P>
+<h3
+    [ngClass]="{
+      'border-blue' : isSpecial,
+      'cl-red' : isSpecial,
+      'pd-10' : isSpecial,
+      'border-violet' : !isSpecial
+    }"
+>
+  Chào mừng Angular
+</h3>
+<hr>
+<h3
+    [ngClass]="setClasses()"
+>
+  Chào mừng Angular
+</h3>
+
+<button type="button" class="btn btn-default"
+        (click)="onToggleSpecial()"
+>button
+</button>
+<hr>
+
+
