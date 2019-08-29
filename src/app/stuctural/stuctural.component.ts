@@ -7,9 +7,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class StucturalComponent implements OnInit {
 
+  title = 'Directive';
+  isShow = true;
+  username = 'toannv';
+  isChecked = false;
+  address = "ha noi";
+  age = 19;
   constructor() { }
 
   ngOnInit() {
   }
 
+  onToggle() {
+
+   this.isShow = !this.isShow;
+  }
+  onChange(value) {
+    this.isChecked = value;
+  }
 }

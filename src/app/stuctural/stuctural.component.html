@@ -1,3 +1,59 @@
-<p>
-  stuctural works!
-</p>
+<h1> {{title}} </h1>
+<div class="container">
+  <div class="row">
+    <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+      <div class="panel panel-warning">
+        <div class="panel-heading">
+          <h3 class="panel-title">Panel title</h3>
+        </div>
+        <div class="panel-body">
+          <h1 *ngIf="isShow === true">Name: {{username}} </h1>
+
+
+          <button type="button" class="btn btn-primary" (click)="onToggle()">Toggle</button>
+
+          <div class="radio">
+            <label>
+              <input type="radio" name="rdCheck" (click)="onChange(true)" value="">
+              Hop le
+            </label> <br>
+            <label>
+              <input type="radio" name="rdCheck" (click)="onChange(false)" id="input" value="">
+              khong hop le
+            </label>
+          </div>
+          <h3 *ngIf="isChecked else elseBlock" >Hop Le</h3>
+          <!-- <h3 *ngIf="!isChecked" >Khong Hop Le</h3> -->
+          <ng-template #elseBlock>
+            <h3>Khong Hop le</h3>
+          </ng-template>
+          <hr>
+
+            <div class="form-group">
+              <label >Dia chi: </label>
+              <input type="text" class="form-control" id="" placeholder="Input field"
+              [(ngModel)]="address"
+              >
+            </div>
+            <div class="form-group">
+              <label >Tuoi: </label>
+              <input type="text" class="form-control" id="" placeholder="Input field"
+              [(ngModel)]="age"
+              >
+            </div>
+
+            <h3 *ngIf="age > 18; else elseNotEnough">Du tuoi</h3>
+            <ng-template #elseNotEnough>
+              <h3>Chua du tuoi</h3>
+            </ng-template>
+
+
+            <button type="submit" class="btn btn-primary">Submit</button>
+
+
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
