@@ -2,12 +2,12 @@
 <div class="container">
   <div class="row">
     <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-      <div class="panel panel-warning">
+      <div class="panel panel-danger">
         <div class="panel-heading">
           <h3 class="panel-title">Panel title</h3>
         </div>
         <div class="panel-body">
-          <h1 *ngIf="isShow === true">Name: {{username}} </h1>
+          <!-- <h1 *ngIf="isShow === true">Name: {{username}} </h1>
 
 
           <button type="button" class="btn btn-primary" (click)="onToggle()">Toggle</button>
@@ -22,9 +22,9 @@
               khong hop le
             </label>
           </div>
-          <h3 *ngIf="isChecked else elseBlock" >Hop Le</h3>
+          <h3 *ngIf="isChecked else elseBlock" >Hop Le</h3> -->
           <!-- <h3 *ngIf="!isChecked" >Khong Hop Le</h3> -->
-          <ng-template #elseBlock>
+          <!-- <ng-template #elseBlock>
             <h3>Khong Hop le</h3>
           </ng-template>
           <hr>
@@ -48,8 +48,69 @@
             </ng-template>
 
 
-            <button type="submit" class="btn btn-primary">Submit</button>
+            <button type="submit" class="btn btn-primary">Submit</button> -->
 
+            <ul class="list-group">
+              <li class="list-group-item" *ngFor="let item of names">
+                {{ item }}
+              </li>
+            </ul>
+
+            <ul class="list-group">
+
+                <ng-template ngFor let-item
+                            [ngForOf]="names" let-i="index"
+                            let-odd="odd"
+                            [ngForTrackBy]="trackById">
+                    <li class="list-group-item"> {{item}} </li>
+                </ng-template>
+              </ul>
+
+
+          <ng-container *ngIf="products.length > 0; else elseNoProducts">
+            <table class="table table-hover table-border">
+              <thead>
+                <tr>
+                  <th>STT</th>
+                  <th>ID</th>
+                  <th>Ten</th>
+                  <th>Gia</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let item of products;
+                            let i = index
+                            let f = first
+                            let l = last
+                            let o = odd
+                            let e = even
+                            "
+                            [style.background-color]="f === true ? 'red' : (o === true ? 'cyan' : 'white')"
+                            >
+                  <td>{{i}} {{f}} {{l}} </td>
+                  <td> {{item.id}} </td>
+                  <td> {{item.name}} </td>
+                  <td> {{item.price}} vnd</td>
+                </tr>
+              </tbody>
+            </table>
+          </ng-container>
+      <!--
+        các biến cục bộ của ngfor:
+        - index: chỉ số đầu tiên
+        - first: trả về true neu là phần tử đầu tiên
+        - last : trả về true neu là phần tử cuối cùng
+        - even : trả về true neu là phần tử chẵn
+        - odd : trả về true neu là phần tử lẻ
+        - trackBy: Dữ liệu đầu vào (index, item) => returrn về thuộc tính duy nhất ( vd: id, mã ...)
+      -->
+      <ng-template #elseNoProducts>
+        <h1>Không có sản phẩm nào</h1>
+      </ng-template>
+
+          <button type="button" class="btn btn-default"
+                  (click)="onLoadData()"
+          >button</button>
 
 
         </div>
