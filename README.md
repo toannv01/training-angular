@@ -1,12 +1,21 @@
 
 
-# Build-in directives : ngSwitchCase
+# Stucture Directive : ngSwitchCase
+### Build-in directives : ngSwitchCase
   - Dùng để thay thế cho việc tạo *ngIf lặp lại nhiều lần.
   - Các biến cần quan tâm:` [ngSwitch], *ngSwitchCase , *ngSwitchDefault `
-
+### ngIf :
+  - Điều kiện để thêm hoặc xóa 1 phần tử
+  - cú pháp: `*ngIf="điều kiện"`
+  - mở rộng:
+    + `*ngIf="điều_kiện; then template_nếu_đúng else template_nếu_sai"` 
 ### ngClass
   - dùng để thêm hoặc xóa nhiều CSS Class cùng 1 lúc => ngClass
-  - Cú Pháp: 'key' : value => Nếu value trả về true => class sẽ được thêm vào, ngược lại class sẽ được xóa
+  - Cú Pháp: `'key' : value `=> Nếu value trả về true => class sẽ được thêm vào, ngược lại class sẽ được xóa
+
+### ngStyle
+  - Dùng để thêm hoặc xóa nhiều css style cùng một lúc => ngStyle
+  - cú pháp: `'key': value ? 'style1' : 'style2'` => nếu value trả về true => style sẽ được thêm vào, ngược lại class sẽ được xóa
 ## AngularTraining01
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.8.
