@@ -2,7 +2,7 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.8.
 
-##Build-in directives : ngSwitchCase
+# Build-in directives : ngSwitchCase
 Dùng để thay thế cho việc tạo *ngIf lặp lại nhiều lần
 Các biến cần quan tâm: [ngSwitch], *ngSwitchCase , *ngSwitchDefault 
 
