@@ -1,8 +1,8 @@
 
 
 # Build-in directives : ngSwitchCase
-Dùng để thay thế cho việc tạo *ngIf lặp lại nhiều lần.
-Các biến cần quan tâm:` [ngSwitch], *ngSwitchCase , *ngSwitchDefault `
+  - Dùng để thay thế cho việc tạo *ngIf lặp lại nhiều lần.
+  - Các biến cần quan tâm:` [ngSwitch], *ngSwitchCase , *ngSwitchDefault `
 
 ### ngClass
   - dùng để thêm hoặc xóa nhiều CSS Class cùng 1 lúc => ngClass
