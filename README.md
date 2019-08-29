@@ -4,6 +4,9 @@
 Dùng để thay thế cho việc tạo *ngIf lặp lại nhiều lần.
 Các biến cần quan tâm:` [ngSwitch], *ngSwitchCase , *ngSwitchDefault `
 
+### ngClass
+  - dùng để thêm hoặc xóa nhiều CSS Class cùng 1 lúc => ngClass
+  - Cú Pháp: 'key' : value => Nếu value trả về true => class sẽ được thêm vào, ngược lại class sẽ được xóa
 ## AngularTraining01
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.8.

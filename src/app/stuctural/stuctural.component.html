@@ -7,112 +7,41 @@
           <h3 class="panel-title">Panel title</h3>
         </div>
         <div class="panel-body">
-          <!-- <h1 *ngIf="isShow === true">Name: {{username}} </h1>
 
 
-          <button type="button" class="btn btn-primary" (click)="onToggle()">Toggle</button>
-
-          <div class="radio">
-            <label>
-              <input type="radio" name="rdCheck" (click)="onChange(true)" value="">
-              Hop le
-            </label> <br>
-            <label>
-              <input type="radio" name="rdCheck" (click)="onChange(false)" id="input" value="">
-              khong hop le
-            </label>
-          </div>
-          <h3 *ngIf="isChecked else elseBlock" >Hop Le</h3> -->
-          <!-- <h3 *ngIf="!isChecked" >Khong Hop Le</h3> -->
-          <!-- <ng-template #elseBlock>
-            <h3>Khong Hop le</h3>
-          </ng-template>
+          <ul class="list-group">
+            <li class="list-group-item"
+                *ngFor="let user of users"
+            >
+              <span class="text-danger" *ngIf="user.country === 'VN' ">
+                {{ user.name }} - {{ user.country }}
+              </span>
+              <span class="text-primary"  *ngIf="user.country === 'JP' " >
+                  {{ user.name }} - {{ user.country }}
+                </span>
+              <span *ngIf="user.country !== 'VN' && user.country !== 'JP' ">
+                {{ user.name }} - {{ user.country }}
+              </span>
+          </li>
+          </ul>
           <hr>
-
-            <div class="form-group">
-              <label >Dia chi: </label>
-              <input type="text" class="form-control" id="" placeholder="Input field"
-              [(ngModel)]="address"
+          <h3>ngSwitchCase</h3>
+          <ul class="list-group">
+              <li class="list-group-item"
+                  *ngFor="let user of users"
+                  [ngSwitch]="user.country"
               >
-            </div>
-            <div class="form-group">
-              <label >Tuoi: </label>
-              <input type="text" class="form-control" id="" placeholder="Input field"
-              [(ngModel)]="age"
-              >
-            </div>
-
-            <h3 *ngIf="age > 18; else elseNotEnough">Du tuoi</h3>
-            <ng-template #elseNotEnough>
-              <h3>Chua du tuoi</h3>
-            </ng-template>
-
-
-            <button type="submit" class="btn btn-primary">Submit</button> -->
-
-            <ul class="list-group">
-              <li class="list-group-item" *ngFor="let item of names">
-                {{ item }}
-              </li>
+                <span *ngSwitchCase=" 'VN' " class="text-danger">
+                  {{ user.name }} - {{ user.country }}
+                </span>
+                <span *ngSwitchCase=" 'JP' " class="text-primary">
+                  {{ user.name }} - {{ user.country }}
+                </span>
+                <span *ngSwitchDefault>
+                  {{ user.name }} - {{ user.country }}
+                </span>
+            </li>
             </ul>
-
-            <ul class="list-group">
-
-                <ng-template ngFor let-item
-                            [ngForOf]="names" let-i="index"
-                            let-odd="odd"
-                            [ngForTrackBy]="trackById">
-                    <li class="list-group-item"> {{item}} </li>
-                </ng-template>
-              </ul>
-
-
-          <ng-container *ngIf="products.length > 0; else elseNoProducts">
-            <table class="table table-hover table-border">
-              <thead>
-                <tr>
-                  <th>STT</th>
-                  <th>ID</th>
-                  <th>Ten</th>
-                  <th>Gia</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr *ngFor="let item of products;
-                            let i = index
-                            let f = first
-                            let l = last
-                            let o = odd
-                            let e = even
-                            "
-                            [style.background-color]="f === true ? 'red' : (o === true ? 'cyan' : 'white')"
-                            >
-                  <td>{{i}} {{f}} {{l}} </td>
-                  <td> {{item.id}} </td>
-                  <td> {{item.name}} </td>
-                  <td> {{item.price}} vnd</td>
-                </tr>
-              </tbody>
-            </table>
-          </ng-container>
-      <!--
-        các biến cục bộ của ngfor:
-        - index: chỉ số đầu tiên
-        - first: trả về true neu là phần tử đầu tiên
-        - last : trả về true neu là phần tử cuối cùng
-        - even : trả về true neu là phần tử chẵn
-        - odd : trả về true neu là phần tử lẻ
-        - trackBy: Dữ liệu đầu vào (index, item) => returrn về thuộc tính duy nhất ( vd: id, mã ...)
-      -->
-      <ng-template #elseNoProducts>
-        <h1>Không có sản phẩm nào</h1>
-      </ng-template>
-
-          <button type="button" class="btn btn-default"
-                  (click)="onLoadData()"
-          >button</button>
-
-
         </div>
       </div>
     </div>
