@@ -21,6 +21,6 @@ export class AttributeComponent implements OnInit {
     'cl-red' : this.isSpecial,
     'pd-10' : this.isSpecial,
     'border-violet' : !this.isSpecial
-    }
+    };
   }
 }

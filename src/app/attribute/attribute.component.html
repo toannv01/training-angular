@@ -22,16 +22,30 @@
   Chào mừng Angular
 </h3>
 <hr>
-<h3
+
+<h3 (click)="onToggleSpecial()"
     [ngClass]="setClasses()"
 >
   Chào mừng Angular
 </h3>
 
-<button type="button" class="btn btn-default"
+<button type="button" class="btn btn-primary"
         (click)="onToggleSpecial()"
 >button
 </button>
 <hr>
+<p [ngStyle]="{ 'padding-top' : isSpecial ? '' : '48px' }"
+>Special : {{ isSpecial }}  </p>
+<h3 (click)="onToggleSpecial()"
+    [ngStyle]="{ 'border' : isSpecial ? 'solid 3px orange' : '' ,
+                'padding' : isSpecial ? '20px' : '20px',
+                'color' : isSpecial ? 'red' : ''}"
+>
+  Chào mừng Angular
+</h3>
 
-
+<button type="button" class="btn btn-primary"
+        (click)="onToggleSpecial()"
+>button
+</button>
+<hr>
