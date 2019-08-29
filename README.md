@@ -8,7 +8,9 @@
   - Điều kiện để thêm hoặc xóa 1 phần tử
   - cú pháp: `*ngIf="điều kiện"`
   - mở rộng:
-    + `*ngIf="điều_kiện; then template_nếu_đúng else template_nếu_sai"` 
+    + `*ngIf="điều_kiện; then template_nếu_đúng else template_nếu_sai"`
+### ngFor :
+  - Cú pháp : `*ngFor="let item of arrays; let i as index; trackBy: myTrackByFunction"`
 ### ngClass
   - dùng để thêm hoặc xóa nhiều CSS Class cùng 1 lúc => ngClass
   - Cú Pháp: `'key' : value `=> Nếu value trả về true => class sẽ được thêm vào, ngược lại class sẽ được xóa
