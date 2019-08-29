@@ -26,6 +26,19 @@
   - cú pháp:
     + `[ngStyle]={'key':'value'}`
     + `'key': value ? 'style1' : 'style2'` => nếu value trả về true => style sẽ được thêm vào, ngược lại class sẽ được xóa
+
+## Truyền dữ liệu giữa các component ( @Input - @Output )
+  - @Input
+    + Cần import `Input` từ @angular/core
+    + Truyền dữ liệu từ component cha (warpper) vào component con
+    + Cú pháp: [] - cặp ngoặc nhọn - để khai báo giá trị nhận vào
+    + Ex: Truyền 1 biến Boolean, Number, String
+  - @Output
+    + Cần import Output, EventEmitter từ @angular/core
+    + Truyền dữ liệu từ component con ra ngoài component cha
+    + Cú pháp: () - Cặp ngoặc tròn - để khai báo giá trị sẽ trả ra ngoài
+    + Để trả giá trị ra ngoài gọi: (tên biến output).emit(giá trị cần truyền)
+    + Ex; Truyền: button, checkbox, select, ...
 ## AngularTraining01
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.8.

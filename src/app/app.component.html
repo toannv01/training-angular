@@ -2,24 +2,18 @@
 <div class="container">
   <div class="row">
     <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-      <div class="panel panel-danger">
-        <div class="panel-heading">
-          <h3 class="panel-title">Structuaral Directive </h3>
-        </div>
-        <div class="panel-body">
-          <app-stuctural></app-stuctural>
-        </div>
-      </div>
+
+          <app-child married="{{isMarried}}"
+                      age="{{age}}"
+                      [name]="'ToanNv'"
+          ></app-child>
     </div>
+
     <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-        <div class="panel panel-danger">
-          <div class="panel-heading">
-            <h3 class="panel-title">Attribute Directive </h3>
-          </div>
-          <div class="panel-body">
-            <app-attribute></app-attribute>
-          </div>
-        </div>
-      </div>
+        <app-user-list
+          [users]="users"
+        ></app-user-list>
+    </div>
+
   </div>
 </div>

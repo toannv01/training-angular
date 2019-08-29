@@ -9,6 +9,8 @@ import { TwoWayBindingComponent } from './component/two-way-binding/two-way-bind
 import { from } from 'rxjs';
 import { StucturalComponent } from './stuctural/stuctural.component';
 import { AttributeComponent } from './attribute/attribute.component';
+import { ChildComponent } from './child/child.component';
+import { UserListComponent } from './user-list/user-list.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +20,9 @@ import { AttributeComponent } from './attribute/attribute.component';
     ViewToComponentComponent,
     TwoWayBindingComponent,
     StucturalComponent,
-    AttributeComponent
+    AttributeComponent,
+    ChildComponent,
+    UserListComponent
   ],
   imports: [
     BrowserModule,
