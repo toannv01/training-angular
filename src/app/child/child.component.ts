@@ -1,4 +1,5 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import {  } from 'events';
 
 @Component({
   selector: 'app-child',
@@ -7,13 +8,18 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class ChildComponent implements OnInit {
 
-  // tslint:disable-next-line: no-input-rename
   @Input('married') isMarried: any;
-  // tslint:disable-next-line: no-input-rename
   @Input('age') myAge: any;
-  // @Input('name') name: any;
+
 
   private _name: string;
+  public txtFullName: string;
+  phone: number;
+
+  @Output('txtFullName')
+  onHandleFullName = new EventEmitter<any>();
+  @Output('phone')
+  onHandlePhone = new EventEmitter<number>();
   constructor() { }
 
   ngOnInit() {
@@ -24,5 +30,9 @@ export class ChildComponent implements OnInit {
   }
   get name() {
     return this._name;
+  }
+  onSubmitForm() {
+    this.onHandleFullName.emit(this.txtFullName);
+    this.onHandlePhone.emit(this.phone);
   }
 }

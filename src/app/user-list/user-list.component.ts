@@ -6,8 +6,12 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./user-list.component.css']
 })
 export class UserListComponent implements OnInit {
-
-  @Input('users') users : any[] = [];
+  /**
+   * Input
+   */
+  // tslint:disable-next-line: no-input-rename
+  @Input('users') users: any[] = [];
+  @Input('fullName') fullname: 
   constructor() { }
 
   ngOnInit() {

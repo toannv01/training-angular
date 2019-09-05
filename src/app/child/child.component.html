@@ -6,6 +6,19 @@
     <h3>Tên : {{ _name }} </h3>
     <h3>TTHN : {{ isMarried ? 'Đã kết hôn' : 'Độc thân' }} </h3>
     <h3>Tuổi : {{ myAge }} </h3>
-
+    <form action="">
+      <legend>Form</legend>
+      <div class="form-group">
+        <label for=""> full name : </label>
+        <input type="text" class="form-control" [(ngModel)]="txtFullName" [ngModelOptions]="{standalone: true}">
+      </div>
+      <div class="form-group">
+        <label for=""> Phone : </label>
+        <input type="text" class="form-control" [(ngModel)]="phone" [ngModelOptions]="{standalone: true}">
+      </div>
+      <button type="button" class="btn btn-primary" (click)="onSubmitForm()">
+        send
+      </button>
+    </form>
   </div>
 </div>
